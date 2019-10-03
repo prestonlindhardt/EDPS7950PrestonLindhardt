@@ -32,9 +32,9 @@
     <!-- Nav Area -->
     <div class="row"> 
       <div id="cont_logo" class="col-3"><!-- column to hold logo-->
-        <img src="assets/logo.svg" height="40px" width="auto">
-        <span class="titantic">Titanic</span>
-        <span class="titantic" class="d-none d-xl-inline">Survival</span>
+        <img src="assets/logo.svg" height="50px" width="auto">
+        <span>Titanic</span>
+        <span class="d-none d-xl-inline">Survival</span>
       </div>
       
         <div id="cont_nav" class="col-9"><!-- icons for nav bar -->
@@ -42,14 +42,14 @@
             
           <div class="p-2"><i class="fas fa-search"></i></div>
           <div class="p-2"><i class="far fa-bell"></i></div>
-          <div class="p-2"><i class="fas fa-bars"></i></div>
+          <div id="btn_settings" class="p-2"><i class="fas fa-bars"></i></div>
           
           </div>
       </div>
     </div>
     </div>
     <div class="row"> <!-- CONTENT AREA -->
-        <div class="col-3 p-0"> <!-- SIDEBAR COMPONENTS -->
+        <div id="cont_sidebar" class="col-3 p-0 active"> <!-- SIDEBAR COMPONENTS -->
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <span>
@@ -63,7 +63,6 @@
               </span>
             </li>
           </ul>
-        
         </div>
       
         <div id="cont_dashboard" class="col-9 p-0"> <!-- DASHBOARD COMPONENTS -->
@@ -81,28 +80,12 @@
               </div>
           </div> 
           
-          
-          <div id="cont_data_exploration ACTIVITY #2" class="container"> <!-- Activity #2 Start-->
-            <div class="row justify-content-center"> <!-- do not use class="d-flex flex-row justify-content-between align-items-center" -->
-              <div class="col-md-4"> <!-- CONTENT FOR AGE -->
-                <div class="card"> Age</div>
-              </div>
-              <div class="col-md-4"> <!-- COUNT FOR SIBSP -->
-                <div class="card">SibSp</div>
-              </div>
-              <div class="col-md-4"> <!-- CONTENT FOR PARCH -->
-                <div class="card">Parch</div>
-              </div>
-            </div>
-          </div>
-          
-          
-          
+
           <!-- CARDS DESCRIPTIVE STATS -->
           <div id="cont_data_exploration" class="container-fluid">
             <div class="row">
-              <div class="col-md-6 col-xl-3"> <!-- CONTENT FOR SURVIVED -->
-                <div class="card"> Survived</div>
+              <div class="col-md-6 col-xl-3"><div id="chart0"></div> <!-- CONTENT FOR SURVIVED -->
+                <div class="card">Survived</div>
               </div>
               <div class="col-md-6 col-xl-3"> <!-- COUNT FOR PCLASS -->
                 <div class="card">Pclass</div>
@@ -115,18 +98,25 @@
               </div>
               
               
+              <div id="cont_data_exploration activity2" class="container"> <!-- Activity #2 Start-->
+            <div class="row justify-content-center"> <!-- do not use class="d-flex flex-row justify-content-between align-items-center" -->
+              <div class="col-md-4"> <!-- CONTENT FOR AGE -->
+                <div class="card"> Age</div>
+              </div>
+              <div class="col-md-4"> <!-- COUNT FOR SIBSP -->
+                <div class="card">SibSp</div>
+              </div>
+              <div class="col-md-4"> <!-- CONTENT FOR PARCH -->
+                <div class="card">Parch</div>
+              </div>
+            </div>
+          </div>
+              
               
               
             </div>
           </div>
-        </div>     
-    
-    <!-- ACTIVITY #2 -->
-      
-        
-    
-  
-              
+        </div>    
   </div>
   
   
