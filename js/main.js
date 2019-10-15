@@ -1,7 +1,7 @@
 // javascript
 // Variables
 var cont_sidebar = document.getElementById("cont_sidebar");
-var btn_settings = document.getElementById("cont_settings");
+var btn_settings = document.getElementById("btn_settings");
 console.log(cont_sidebar);
 console.log(btn_settings); //not functioning. not showing up in console
 
