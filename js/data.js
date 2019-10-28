@@ -1,3 +1,4 @@
+// Example Javascript object with embedded arrays, properties, and values
 var options = {
 	version: 1.0,
 	data: {
@@ -46,40 +47,40 @@ var options = {
 						}
 					}
 				}
-			}, // End of Pie Chart   
-          //start of bar chart
-          {
-            chart:{
-              height: 350,
-              type: "bar"
-          },
-          plotOptions:{
-            bar:{
-                columnWidth: "50%",
-                endingShape: "rounded"
-          }
-          },
-			  dataLabels: {
-				  enabled: false
-			  },
-			  tooltip: {
-				  style: {
-					  fontSize: "14px",
-					  fontFamily: "Poppins"
-					  
-				  }
-			  },
-			  series: [
-				  {
-					  name: "Survived",
-					  data: [231,109]
-				  },
-				  {
-					  name: "Died",
-					  data: [81,468]
-				  }
-			  ],
-			  xaxis: {
+			}, // End of Pie Chart
+			// Start of Bar Chart
+			{
+				chart: {
+					height: 350,
+					type: "bar"
+				},
+				plotOptions: {
+					bar: {
+						columnWidth: "50%",
+						endingShape: "rounded"
+					}
+				},
+				dataLabels: {
+					enabled: false
+				},
+				tooltip: {
+					style: {
+						fontSize: "14px",
+						fontFamily: "Poppins"
+						// Color is assigned via the CSS using .apexcharts-tooltip
+					}
+				},
+				series: [
+					{
+						name: "Survived",
+						data: [231, 109]
+					},
+					{
+						name: "Died",
+						data: [81, 468]
+					}
+				],
+				xaxis: {
 					categories: ["Female", "Male"],
 					labels: {
 						style: {
@@ -120,6 +121,52 @@ var options = {
 					opacity: 1
 				}
 			}, //End of Bar Chart
+			
+			// Pie Chart for PCLASS
+			{
+				chart: {
+					type: "pie"
+				},
+				labels: ["First", "Second", "Third"],
+				series: [216, 184, 491],
+				title: {
+					text: "Passenger Class",
+					align: "center",
+					style: {
+						fontSize: "18px",
+						color: "#595959",
+						fontFamily: "Poppins"
+					}
+				},
+				colors: ["#8ABFB5", "#A66F3F", "#000000"],
+				legend: {
+					position: "bottom",
+					fontSize: "14px",
+					fontFamily: "Poppins",
+					labels: {
+						useSeriesColors: true
+					}
+				},
+				dataLabels: {
+					textAnchor: "middle",
+					style: {
+						fontSize: "16px",
+						fontFamily: "Poppins",
+						colors: ["#8ABFB5", "#A66F3F", "#000000"]
+					},
+					dropShadow: {
+						enabled: false
+					}
+				},
+				plotOptions: {
+					pie: {
+						dataLabels: {
+							offset: 40
+						}
+					}
+				}
+			}, // End of Pie Chart FOR PCLASS
+			
 			// Start of Line Chart
 			{
 				chart: {
@@ -134,7 +181,7 @@ var options = {
 					style: {
 						fontSize: "14px",
 						fontFamily: "Poppins"
-						
+						// Color is assigned via the CSS using .apexcharts-tooltip
 					}
 				},
 				series: [
@@ -159,7 +206,7 @@ var options = {
 				grid: {
 					borderColor: "#e7e7e7",
 					row: {
-						colors: ["#f3f3f3", "transparent"], 
+						colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
 						opacity: 0.5
 					}
 				},
@@ -205,19 +252,147 @@ var options = {
 						useSeriesColors: true
 					}
 				}
-			} //End of Line Chart
+			}, //End of Line Chart
+			// Start of Radar Chart
+			{
+				chart: {
+					height: 400,
+					type: "radar"
+				},
+				series: [
+					{
+						name: "Error",
+						data: [50, 95, 80, 70]
+					}
+				],
+				title: {
+					text: "Model Accuracy",
+					align: "center",
+					style: {
+						fontSize: "18px",
+						color: "#595959",
+						fontFamily: "Poppins"
+					}
+				},
+				fill: {
+					opacity: 0.4,
+					colors: ["#5e8c7f"]
+				},
+				stroke: {
+					show: true,
+					width: 4,
+					colors: ["#5e8c7f"],
+					dashArray: 0
+				},
+				markers: {
+					size: 5,
+					colors: ["#5e8c7f"],
+					hover: {
+						size: 10
+					}
+				},
+				dataLabels: {
+					style: {
+						fontSize: "14px",
+						fontFamily: "Poppins"
+					}
+				},
+				plotOptions: {
+					radar: {
+						polygons: {
+							strokeColor: "#e8e8e8",
+							fill: {
+								colors: ["#f8f8f8", "#fff"]
+							}
+						}
+					}
+				},
+				yaxis: {
+					labels: {
+						style: {
+							fontFamily: "Poppins"
+						}
+					}
+				},
+				tooltip: {
+					style: {
+						fontSize: "14px",
+						fontFamily: "Poppins"
+						// Color is assigned via the CSS using .apexcharts-tooltip
+					},
+					marker: {
+						show: false
+					}
+				},
+				labels: ["Majority Class", "Decision Tree", "Neural Network", "Naive Bayes"]
+			}, // End of Radar Chart
+			// Start of Radial Bars Chart
+			{
+				chart: {
+					height: 350,
+					type: "radialBar"
+				},
+				title: {
+					text: "Majority Class",
+					align: "center",
+					style: {
+						fontSize: "18px",
+						color: "#595959",
+						fontFamily: "Poppins"
+					}
+				},
+				colors: ["#8ABFB5", "#A66F3F"],
+				plotOptions: {
+					radialBar: {
+						dataLabels: {
+							name: {
+								fontSize: "22px",
+								fontFamily: "Poppins"
+							},
+							value: {
+								fontSize: "16px",
+								fontFamily: "Poppins"
+							},
+							total: {
+								show: true,
+								label: "Prediction",
+								color: "#8c442a",
+								formatter: function(w) {
+									// By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
+									return "Died";
+								}
+							}
+						}
+					}
+				},
+				series: [20, 80],
+				labels: ["Survived", "Died"],
+				legend: {
+					show: true,
+					floating: true,
+					fontSize: "16px",
+					position: "bottom",
+					labels: {
+						useSeriesColors: true
+					}
+				}
+			} // End of Radial Bars Chart
 		]
 	}
 };
-         
-          
 
+// Assign a variable called chart an object constructed via the ApexCharts function, which defines an HTML element and the relevant chart data
 var chart = new ApexCharts(document.querySelector("#chart0"), options.data.items[0]);
 var chart1 = new ApexCharts(document.querySelector("#chart1"), options.data.items[1]);
 var chart2 = new ApexCharts(document.querySelector("#chart2"), options.data.items[2]);
+var chart3 = new ApexCharts(document.querySelector("#chart3"), options.data.items[3]);
+var chart4 = new ApexCharts(document.querySelector("#chart4"), options.data.items[4]);
+var chart7 = new ApexCharts(document.querySelector("#chart7"), options.data.items[3]);
 
 // Render the chart using the element and data
 chart.render();
 chart1.render();
 chart2.render();
-
+chart3.render();
+chart4.render();
+chart7.render();
