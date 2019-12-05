@@ -16,7 +16,7 @@
 
 		<!-- Main Stylesheet -->
 		<link href="css/style.css" rel="stylesheet" />
-		<title>EDPS 7950 Week 7</title>
+		<title>EDPS 7950 Week 10</title>
 	</head>
 	<body>
 		<!-- Page Area -->
@@ -84,8 +84,8 @@
 								<div class="card"><div id="chart1"></div></div>
 							</div>
 							<div class="col-md-6 col-xl-3">
-								<!-- Content for Sex WAS SEX-IS NOW ACTIVITY#3 PCLASS -->
-								<div class="card"><div id="chart7"></div></div>
+								<!-- Content for Sex -->
+								<div class="card">Pclass</div>
 							</div>
 							<div class="col-md-6 col-xl-3">
 								<!-- Content for Embarked -->
@@ -99,7 +99,7 @@
 								</div>
 							</div>
 							<div class="col">
-								<div class="card">SibSp</div>
+								<div class="card">familysize</div>
 							</div>
 							<div class="col">
 								<div class="card">Parch</div>
@@ -116,8 +116,8 @@
 										Model Simulator
 									</div>
 									<div class="card-body">
-										<div id="chart3"></div>
-										<form>
+										<form id="cont_form_model">
+											<div id="chart3"></div>
 											<div class="form-group">
 												<label for="dropdown_model">Select a Model</label>
 												<select class="form-control" id="dropdown_model">
@@ -126,6 +126,62 @@
 													<option>Neural Network</option>
 													<option>Naive Bayes</option>
 												</select>
+											</div>
+										</form>
+										<form id="cont_form_input" class="d-none">
+											<h4 id="model_label"></h4>
+											<div class="form-group">
+												<label for="input_gender">Gender</label>
+												<select class="form-control" id="input_gender">
+													<option>Male</option>
+													<option>Female</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label for="input_title">Title</label>
+												<select class="form-control" id="input_title">
+													<option>Mr</option>
+													<option>Mrs</option>
+													<option>Miss</option>
+													<option>Master</option>
+													<option>Rare</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label for="input_class">Passenger Class</label>
+												<select class="form-control" id="input_class">
+													<option>1</option>
+													<option>2</option>
+													<option>3</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label for="input_embarked">Embarked</label>
+												<select class="form-control" id="input_embarked">
+													<option>Cherbourg</option>
+													<option>Southampton</option>
+													<option>Queenstown</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label for="input_familysize">Size of the family aboard the Titanic</label>
+												<input type="range" class="form-control-range" id="input_familysize" min="0" max="8" />
+											</div>
+											<div class="form-group">
+												<label for="input_parch">Number of Parents/Children aboard the Titanic</label>
+												<input type="range" class="form-control-range" id="input_parch" min="0" max="6" />
+											</div>
+											<div class="form-group">
+												<label for="input_age">Passenger's Age</label>
+												<input type="text" class="form-control" id="input_age" placeholder="22" />
+											</div>
+											<div class="form-group">
+												<label for="input_fare">Fare paid for ticket</label>
+												<input type="text" class="form-control" id="input_fare" placeholder="38" />
+											</div>
+											<div class="btn-group w-100" role="group">
+												<button id="btn_predict" type="button" class="btn btn-dark">Predict</button>
+												<button id="btn_reset" type="button" class="btn btn-dark">Reset</button>
 											</div>
 										</form>
 									</div>
@@ -141,9 +197,9 @@
 									</div>
 									<div class="card-footer">
 										<strong>Interpretation</strong>
-										<p>
-											The model classifies this observation as more likely to have <span style="color: #8c442a;">Died</span> with an <span style="color: #8c442a;">80</span>%
-											probability.
+										<p class="text-justify">
+											The model classifies this observation as more likely to have
+											<span id="model_prediction" style="color: #8c442a;">N/A</span> with a likelihood probability of <span id="model_likelihood" style="color: #8c442a;">50%</span>.
 										</p>
 									</div>
 								</div>

@@ -121,52 +121,6 @@ var options = {
 					opacity: 1
 				}
 			}, //End of Bar Chart
-			
-			// Pie Chart for PCLASS
-			{
-				chart: {
-					type: "pie"
-				},
-				labels: ["First", "Second", "Third"],
-				series: [216, 184, 491],
-				title: {
-					text: "Passenger Class",
-					align: "center",
-					style: {
-						fontSize: "18px",
-						color: "#595959",
-						fontFamily: "Poppins"
-					}
-				},
-				colors: ["#8ABFB5", "#A66F3F", "#000000"],
-				legend: {
-					position: "bottom",
-					fontSize: "14px",
-					fontFamily: "Poppins",
-					labels: {
-						useSeriesColors: true
-					}
-				},
-				dataLabels: {
-					textAnchor: "middle",
-					style: {
-						fontSize: "16px",
-						fontFamily: "Poppins",
-						colors: ["#8ABFB5", "#A66F3F", "#000000"]
-					},
-					dropShadow: {
-						enabled: false
-					}
-				},
-				plotOptions: {
-					pie: {
-						dataLabels: {
-							offset: 40
-						}
-					}
-				}
-			}, // End of Pie Chart FOR PCLASS
-			
 			// Start of Line Chart
 			{
 				chart: {
@@ -262,7 +216,7 @@ var options = {
 				series: [
 					{
 						name: "Error",
-						data: [50, 95, 80, 70]
+						data: [38, 18.29, 20, 21]
 					}
 				],
 				title: {
@@ -333,7 +287,7 @@ var options = {
 					type: "radialBar"
 				},
 				title: {
-					text: "Majority Class",
+					text: "",
 					align: "center",
 					style: {
 						fontSize: "18px",
@@ -354,18 +308,18 @@ var options = {
 								fontFamily: "Poppins"
 							},
 							total: {
-								show: true,
+								show: false,
 								label: "Prediction",
 								color: "#8c442a",
-								formatter: function(w) {
+								formatter: function(val) {
 									// By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
-									return "Died";
+									//return val;
 								}
 							}
 						}
 					}
 				},
-				series: [20, 80],
+				series: [50, 50],
 				labels: ["Survived", "Died"],
 				legend: {
 					show: true,
@@ -374,6 +328,15 @@ var options = {
 					position: "bottom",
 					labels: {
 						useSeriesColors: true
+					},
+					markers: {
+						size: 0
+					},
+					formatter: function(seriesName, opts) {
+						return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex] + "%";
+					},
+					itemMargin: {
+						horizontal: 1
 					}
 				}
 			} // End of Radial Bars Chart
@@ -387,7 +350,6 @@ var chart1 = new ApexCharts(document.querySelector("#chart1"), options.data.item
 var chart2 = new ApexCharts(document.querySelector("#chart2"), options.data.items[2]);
 var chart3 = new ApexCharts(document.querySelector("#chart3"), options.data.items[3]);
 var chart4 = new ApexCharts(document.querySelector("#chart4"), options.data.items[4]);
-var chart7 = new ApexCharts(document.querySelector("#chart7"), options.data.items[3]);
 
 // Render the chart using the element and data
 chart.render();
@@ -395,4 +357,3 @@ chart1.render();
 chart2.render();
 chart3.render();
 chart4.render();
-chart7.render();
