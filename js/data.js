@@ -120,7 +120,11 @@ var options = {
 				fill: {
 					opacity: 1
 				}
-			}, //End of Bar Chart
+			}, 
+			
+			//End of Bar Chart
+			
+			
 			// Start of Line Chart
 			{
 				chart: {
@@ -206,7 +210,100 @@ var options = {
 						useSeriesColors: true
 					}
 				}
-			}, //End of Line Chart
+			}, 
+			
+			
+			
+			
+			
+			
+{
+				chart: {
+					height: 350,
+					type: "line"
+				},
+				colors: ["#8ABFB5", "#A66F3F"],
+				dataLabels: {
+					enabled: false
+				},
+				tooltip: {
+					style: {
+						fontSize: "14px",
+						fontFamily: "Poppins"
+						// Color is assigned via the CSS using .apexcharts-tooltip
+					}
+				},
+				series: [
+					{
+						name: "Survived",
+						data: [100, 100, 100, 100, 100]
+					},
+					{
+						name: "Died",
+						data: [200, 200, 200, 200, 5]
+					}
+				],
+				title: {
+					text: "Family Size",
+					align: "center",
+					style: {
+						fontSize: "18px",
+						color: "#595959",
+						fontFamily: "Poppins"
+					}
+				},
+				grid: {
+					borderColor: "#e7e7e7",
+					row: {
+						colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
+						opacity: 0.5
+					}
+				},
+				markers: {
+					size: 6
+				},
+				xaxis: {
+					categories: ["0-2", "3-4", "5-6", "6-7", "7-..."],
+					title: {
+						text: "Bins",
+						style: {
+							fontSize: "14px",
+							color: "#595959",
+							fontFamily: "Poppins"
+						}
+					},
+					labels: {
+						style: {
+							fontSize: "14px",
+							color: "#595959",
+							fontFamily: "Poppins"
+						}
+					}
+				},
+				yaxis: {
+					labels: {
+						style: {
+							fontSize: "14px",
+							color: "#595959",
+							fontFamily: "Poppins"
+						}
+					}
+				},
+				legend: {
+					position: "top",
+					horizontalAlign: "right",
+					floating: true,
+					offsetY: -25,
+					offsetX: -5,
+					fontSize: "14px",
+					fontFamily: "Poppins",
+					labels: {
+						useSeriesColors: true
+					}
+				}
+			},	
+			
+			//End of Line Chart
 			// Start of Radar Chart
 			{
 				chart: {
